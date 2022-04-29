@@ -1,14 +1,21 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable arrow-body-style */
 import styles from './BooksContainer.module.css';
 import Book from './Book';
 
 const Books = () => {
+  const books = [
+    { title: 'book one', author: 'ben' },
+    { title: 'book two', author: 'Nick' },
+  ];
   return (
     <>
       <div className={styles.innerContent}>
         <div>
           <ul>
-            <Book />
+            {books.map((book) => (
+              <Book title={book.title} author={book.author} />
+            ))}
           </ul>
         </div>
         <form>
