@@ -4,8 +4,6 @@ import Navigation from './components/Navigation';
 import Books from './components/Books';
 import BookCategories from './components/BookCategories';
 
-import './App.css';
-
 function App() {
   return (
     <div>
