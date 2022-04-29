@@ -30,7 +30,7 @@ const Books = () => {
             />
           </label>
           <label htmlFor="author">
-            Email
+            Author
             <input
               id="author"
               name="author"
