@@ -1,4 +1,4 @@
-import styles from './Books.module.css';
+import styles from './BooksCategories.module.css';
 
 const BookCategories = () => (
   <div className={styles.innerContent}>

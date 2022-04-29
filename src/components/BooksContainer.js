@@ -1,5 +1,6 @@
 /* eslint-disable arrow-body-style */
-import styles from './Books.module.css';
+import styles from './BooksContainer.module.css';
+import Book from './Book';
 
 const Books = () => {
   return (
@@ -7,16 +8,7 @@ const Books = () => {
       <div className={styles.innerContent}>
         <div>
           <ul>
-            <li>
-              Book One by Ben
-              {' '}
-              <button type="button">Delete Book</button>
-            </li>
-            <li>
-              Book Two by Monica
-              {' '}
-              <button type="button">Delete Book</button>
-            </li>
+            <Book />
           </ul>
         </div>
         <form>
