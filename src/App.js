@@ -11,8 +11,8 @@ function App() {
     <div>
       <Navigation />
       <Routes>
-        <Route path='/' element={<Books />} />
-        <Route path='/categories' element={<BookCategories />} />
+        <Route path="/" element={<Books />} />
+        <Route path="/categories" element={<BookCategories />} />
       </Routes>
     </div>
   );
