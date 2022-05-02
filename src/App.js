@@ -1,15 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/UI/Navigation';
-import Books from './components/redux/books/Book';
-import BookCategories from './components/redux/categories/BookCategories';
+import Books from './components/BooksContainer';
+import BookCategories from './redux/categories/BookCategories';
 
 function App() {
   return (
     <div>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Books title="Ben" author="Ten" />} />
+        <Route path="/" element={<Books />} />
         <Route path="/categories" element={<BookCategories />} />
       </Routes>
     </div>
