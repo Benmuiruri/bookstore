@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/UI/Navigation';
 import Books from './components/BooksContainer';
-import BookCategories from './redux/categories/BookCategories';
+import BookCategories from './components/BooksCategories';
 
 function App() {
   return (
