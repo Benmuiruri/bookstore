@@ -1,0 +1,23 @@
+.headerNav {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  color: #058ffc;
+  background-color: #fff;
+  justify-content: space-between;
+  width: 56vw;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  color: #058ffc;
+  padding: 0.5em;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+}
+
+.navigation {
+  display: flex;
+  list-style-type: none;
+}
