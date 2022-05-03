@@ -30,7 +30,7 @@ export const addBook = (data) => ({
 });
 
 export const deleteBook = (id) => ({
-  type: ADD_BOOK,
+  type: DELETE_BOOK,
   payload: {
     id,
   },

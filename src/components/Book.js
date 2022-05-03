@@ -16,10 +16,10 @@ const Book = ({ book }) => {
           dispatch(deleteBook(book.id));
         }}
       >
-        Delete
+        Delete Book
       </button>
     </li>
   );
-}
+};
 
 export default Book;
