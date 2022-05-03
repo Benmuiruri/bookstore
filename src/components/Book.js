@@ -6,7 +6,7 @@ import { deleteBook } from '../redux/books/books';
 const Book = ({ book }) => {
   const dispatch = useDispatch();
   return (
-    <li>
+    <li key={book.id}>
       {book.title}
       {' by '}
       {book.author}
