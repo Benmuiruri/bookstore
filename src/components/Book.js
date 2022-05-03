@@ -16,7 +16,7 @@ const Book = ({ book }) => {
           dispatch(deleteBook(book.id));
         }}
       >
-        Remove
+        Delete
       </button>
     </li>
   );
