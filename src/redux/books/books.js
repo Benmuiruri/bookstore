@@ -1,7 +1,10 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
 
-const initialState = [];
+const initialState = [
+  { title: 'book one', author: 'ben' },
+  { title: 'book two', author: 'Nick' },
+];
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
