@@ -1,5 +1,4 @@
-// @ts-ignore
-import { createStore, combineReducers } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
 import booksReducer from './books/books';
 import categoriesReducer from './categories/categories';
 
@@ -8,4 +7,6 @@ const rootReducer = combineReducers({
   categories: categoriesReducer,
 });
 
-export default createStore(rootReducer);
+const store = createStore(rootReducer);
+
+export default store;
