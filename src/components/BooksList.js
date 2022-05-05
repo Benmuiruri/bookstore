@@ -1,9 +1,18 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllBooks } from '../redux/books/books';
 import Book from './Book';
 
 const BookList = () => {
   // @ts-ignore
   const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // @ts-ignore
+    dispatch(getAllBooks());
+  }, []);
+
   if (books.length) {
     return (
       <ul>

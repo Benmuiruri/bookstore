@@ -13,6 +13,7 @@ const Book = ({ book }) => {
       <button
         type="button"
         onClick={() => {
+          // @ts-ignore
           dispatch(deleteBook(book.id));
         }}
       >

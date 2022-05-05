@@ -1,33 +1,34 @@
+/* eslint-disable no-use-before-define */
 import { v4 as uuidv4 } from 'uuid';
 
-const BOOK_ADDED = 'bookstore/books/BOOK_ADDED';
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
-const ALL_BOOKS = 'bookstore/books/ALL_BOOKS';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const appID = 'B1p4fGLO1yhl4WoADONx';
+const endPoint = `${URL}/apps/${appID}/books/`;
 
-const initialState = [
-  { title: 'book one', author: 'ben' },
-  { title: 'book two', author: 'Nick' },
-];
+const BOOK_ADDED = 'bookstore/books/ADDED';
+const BOOK_DELETED = 'bookstore/books/DELETED';
+const GET_BOOKS = 'bookstore/books/GET_BOOKS';
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = [], action) {
   switch (action.type) {
-    case ALL_BOOKS:
+    case GET_BOOKS:
       return action.payload.books;
     case BOOK_ADDED:
       return state.concat({
-        id: uuidv4(),
-        ...action.payload.data,
+        id: action.payload.book.item_id,
+        title: action.payload.book.title,
+        author: action.payload.book.author,
+        category: action.payload.book.category,
       });
-    case DELETE_BOOK:
+    case BOOK_DELETED:
       return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
 }
 
-export const bookAdded = (book) => ({
-  type: ADD_BOOK,
+const bookAdded = (book) => ({
+  type: BOOK_ADDED,
   payload: {
     book,
   },
@@ -35,13 +36,11 @@ export const bookAdded = (book) => ({
 
 export const addBook = (data) => (dispatch) => {
   const book = {
-    id: uuidv4(),
-    tittle: data.title,
+    item_id: uuidv4(),
+    title: data.title,
     author: data.author,
+    category: '',
   };
-  const appID = '112RUYcPxo5o5IigoEGI';
-  const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
-  const endPoint = `${URL}/apps/${appID}/books/`;
 
   const options = {
     method: 'POST',
@@ -52,31 +51,41 @@ export const addBook = (data) => (dispatch) => {
   };
 
   fetch(endPoint, options).then((res) => {
-    if (res.status === 201) {
-      dispatch(bookAdded(book));
-    }
+    if (res.status === 201) dispatch(bookAdded(book));
   });
 };
 
-export const deleteBook = (id) => ({
-  type: DELETE_BOOK,
+export const bookDeleted = (id) => ({
+  type: BOOK_DELETED,
   payload: {
     id,
   },
 });
 
-const allBooks = (books) => ({
-  type: ALL_BOOKS,
+export const deleteBook = (id) => (dispatch) => {
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      book_id: id,
+    }),
+  };
+
+  fetch(`${endPoint}${id}`, options).then((res) => {
+    if (res.status === 201) dispatch(bookDeleted(id));
+  });
+};
+
+const getBooks = (books) => ({
+  type: GET_BOOKS,
   payload: {
     books,
   },
 });
 
 export const getAllBooks = () => (dispatch) => {
-  const appID = '112RUYcPxo5o5IigoEGI';
-  const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
-  const endPoint = `${URL}/apps/${appID}/books/`;
-
   fetch(endPoint)
     .then((res) => res.json())
     .then((books) => {
@@ -84,6 +93,6 @@ export const getAllBooks = () => (dispatch) => {
         id: bookID,
         ...books[bookID][0],
       }));
-      dispatch(allBooks(booksList));
+      dispatch(getBooks(booksList));
     });
 };

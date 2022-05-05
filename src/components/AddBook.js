@@ -17,6 +17,7 @@ const AddBook = () => {
       return;
     }
     dispatch(
+      // @ts-ignore
       addBook({
         title: enteredAuthor,
         author: enteredTitle,
