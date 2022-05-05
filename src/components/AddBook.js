@@ -17,6 +17,7 @@ const AddBook = () => {
       return;
     }
     dispatch(
+      // @ts-ignore
       addBook({
         title: enteredAuthor,
         author: enteredTitle,
@@ -52,7 +53,7 @@ const AddBook = () => {
               placeholder="Title..."
             />
           </label>
-          <button type="submit">Add User</button>
+          <button type="submit">Add Book</button>
         </form>
       </div>
     </>
