@@ -52,7 +52,7 @@ const AddBook = () => {
               placeholder="Title..."
             />
           </label>
-          <button type="submit">Add User</button>
+          <button type="submit">Add Book</button>
         </form>
       </div>
     </>
