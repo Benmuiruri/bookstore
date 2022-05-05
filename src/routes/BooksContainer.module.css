@@ -1,6 +1,11 @@
 .innerContent {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 68.563rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #F3F4F6;
 }
