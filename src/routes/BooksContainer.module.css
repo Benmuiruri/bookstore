@@ -1,6 +1,9 @@
-.innerContent {
+.outerContent {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #f3f4f6;
+  height: 100vh;
+  padding-top: 2.37rem;
 }
