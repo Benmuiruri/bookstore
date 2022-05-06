@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/books';
@@ -16,11 +16,11 @@ const Book = ({ book }) => {
             <h3 className={styles.title}>{book.title}</h3>
 
             <div className={styles.buttons}>
-              <button type='button' className={styles.btnBook}>
+              <button type="button" className={styles.btnBook}>
                 Comments
               </button>
               <button
-                type='button'
+                type="button"
                 className={styles.btnBook}
                 onClick={() => {
                   // @ts-ignore
@@ -29,7 +29,7 @@ const Book = ({ book }) => {
               >
                 Delete
               </button>
-              <button type='button' className={styles.btnBook}>
+              <button type="button" className={styles.btnBook}>
                 Edit
               </button>
             </div>
@@ -37,20 +37,20 @@ const Book = ({ book }) => {
           <div className={styles.completionStatus}>
             <svg
               className={styles.svgImg}
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='7'
-              viewBox='0 0 100 100'
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="7"
+              viewBox="0 0 100 100"
             >
               <path
                 className={styles.blueBar}
-                strokeDasharray='250,0'
-                d='M50 10a40 40 0 0 1 0 80 40 40 0 0 1 0-80'
+                strokeDasharray="250,0"
+                d="M50 10a40 40 0 0 1 0 80 40 40 0 0 1 0-80"
               />
               <path
                 className={styles.greyBar}
-                strokeDasharray='180,180'
-                d='M50 10a40 40 0 0 1 0 80 40 40 0 0 1 0-80'
+                strokeDasharray="180,180"
+                d="M50 10a40 40 0 0 1 0 80 40 40 0 0 1 0-80"
               />
             </svg>
             <div className={styles.completedStats}>
@@ -61,7 +61,7 @@ const Book = ({ book }) => {
           <div className={styles.chapterInfo}>
             <p className={styles.currentChapter}>current chapter</p>
             <p className={styles.chapterNo}>Chapter 1</p>
-            <button type='button' className={styles.btnChapter}>
+            <button type="button" className={styles.btnChapter}>
               Update progess
             </button>
           </div>

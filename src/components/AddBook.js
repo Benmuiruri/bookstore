@@ -30,30 +30,30 @@ const AddBook = () => {
   };
   return (
     <>
-      <h2>Add new book</h2>
+      <h2 className={styles.formHeader}>Add new book</h2>
       <div className={styles.input}>
-        <form onSubmit={addBookHandler}>
+        <form className={styles.bookForm} onSubmit={addBookHandler}>
           <label htmlFor="author">
-            Author
             <input
               id="author"
               name="author"
               type="text"
               ref={authorInputRef}
-              placeholder="Author..."
+              className={styles.authorInput}
+              placeholder="Author"
             />
           </label>
           <label htmlFor="title">
-            Title
             <input
               id="title"
               name="title"
               type="text"
               ref={titleInputRef}
-              placeholder="Title..."
+              className={styles.titleInput}
+              placeholder="Title"
             />
           </label>
-          <button type="submit">Add Book</button>
+          <button type="submit" className={styles.formBtn}>Add Book</button>
         </form>
       </div>
     </>
