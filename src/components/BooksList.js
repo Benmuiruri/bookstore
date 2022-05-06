@@ -16,11 +16,11 @@ const BookList = () => {
 
   if (books.length) {
     return (
-      <ul>
+      <div>
         {books.map((book) => (
           <Book book={book} key={book.id} />
         ))}
-      </ul>
+      </div>
     );
   }
   return (
