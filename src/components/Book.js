@@ -11,7 +11,7 @@ const Book = ({ book }) => {
       <div className={styles.bookDivContainer}>
         <div className={styles.bookDiv}>
           <div className={styles.bookDetails}>
-            <span className={styles.category}> Action</span>
+            <span className={styles.category}>Action</span>
             <h2 className={styles.author}>{book.author}</h2>
             <h3 className={styles.title}>{book.title}</h3>
 
@@ -36,7 +36,7 @@ const Book = ({ book }) => {
           </div>
           <div className={styles.completionStatus}>
             <svg
-              className={styles.greyBar}
+              className={styles.svgImg}
               fill='none'
               stroke='currentColor'
               strokeWidth='7'
@@ -48,7 +48,7 @@ const Book = ({ book }) => {
                 d='M50 10a40 40 0 0 1 0 80 40 40 0 0 1 0-80'
               />
               <path
-                className='text-blue-500'
+                className={styles.greyBar}
                 strokeDasharray='180,180'
                 d='M50 10a40 40 0 0 1 0 80 40 40 0 0 1 0-80'
               />
