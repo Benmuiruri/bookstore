@@ -12,8 +12,8 @@ const Book = ({ book }) => {
         <div className={styles.bookDiv}>
           <div className={styles.bookDetails}>
             <span className={styles.category}>Action</span>
-            <h2 className={styles.author}>{book.author}</h2>
-            <h3 className={styles.title}>{book.title}</h3>
+            <h2 className={`${styles.author} ${styles.normalFonts}`}>{book.author}</h2>
+            <h3 className={`${styles.title} ${styles.normalFonts}`}>{book.title}</h3>
 
             <div className={styles.buttons}>
               <button type="button" className={styles.btnBook}>
@@ -54,14 +54,14 @@ const Book = ({ book }) => {
               />
             </svg>
             <div className={styles.completedStats}>
-              <p className={styles.completedPercentage}>75%</p>
-              <p className={styles.completedText}>Completed</p>
+              <p className={`${styles.completedPercentage} ${styles.normalFonts}`}>75%</p>
+              <p className={`${styles.completedText} ${styles.normalFonts}`}>Completed</p>
             </div>
           </div>
           <div className={styles.chapterInfo}>
-            <p className={styles.currentChapter}>current chapter</p>
-            <p className={styles.chapterNo}>Chapter 1</p>
-            <button type="button" className={styles.btnChapter}>
+            <p className={`${styles.currentChapter} ${styles.normalFonts}`}>current chapter</p>
+            <p className={`${styles.chapterNo} ${styles.normalFonts}`}>Chapter 1</p>
+            <button type="button" className={`${styles.btnChapter} ${styles.normalFonts}`}>
               Update progess
             </button>
           </div>
